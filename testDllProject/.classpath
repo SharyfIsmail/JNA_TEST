@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_261 x32"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/JAVA JNA/jna-5.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA JNA/jna-platform-5.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA JNA/jnaerator-runtime-0.12.jar"/>
+	<classpathentry kind="lib" path="D:/JAVA JNA/ochafik-util-0.12.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
