@@ -156,12 +156,15 @@ public class Main {
 		_SpecialParametrs params = new _SpecialParametrs();
 		params.AveragingFactor = 1;
 		params.SpeedMeasurementPeriod = 1000;
-		
-		
-		Pointer ptr = T_45.INSTANCE.DecoderCreate(1, (byte)T_45.USB_DECODER_T45, handler , null, params);
-
+		Pointer ptr = null;
+		System.out.println(ptr);
+		 ptr = T_45.INSTANCE.DecoderCreate(1, (byte)T_45.USB_DECODER_T45, handler , null, params);
 		int status = T_45.INSTANCE.DecoderOpen(ptr, (byte)0);
+		System.out.println(status);
 		
+			System.out.println(status);
+
+		 
 		System.out.println(ptr.toString());
 		if(status == 0)
 		{		
@@ -172,26 +175,14 @@ public class Main {
 			System.out.println("Error Decoder Open. Error Code: " + status);
 		}
 		
-		
-
-		//status = TestLibrary.INSTANCE.DecoderSetCurrentTime(ptr, new ULONGLONG(123455));
-		//System.out.println("Time set status " + status);
-		_TemperBuffer tb = new _TemperBuffer();
-		IntByReference PBytesRead = new IntByReference();
 		ByteBuffer byteBuffer_1 = ByteBuffer.allocate(16);
 		IntBuffer intBuffer_1 = IntBuffer.allocate(16);
 		T_45.INSTANCE.DecoderReadTemperature(ptr, byteBuffer_1, intBuffer_1);
 		System.out.println("DecoderReadTemperature status " + status);
-		System.out.println("Bytes read:" + intBuffer_1.toString());		
+		System.out.println("Bytes read:" + intBuffer_1.toString());	
 		System.out.println("Time: " + byteBuffer_1.order(ByteOrder.LITTLE_ENDIAN).getLong(0));
 		System.out.println("Temp: " + byteBuffer_1.order(ByteOrder.LITTLE_ENDIAN).getFloat(8));
 		
-		//_SK sk = new _SK();
-		//ByteBuffer StrokaDatchikID = ByteBuffer.allocate(10);
-		
-		_SpeedBuffer sb = new _SpeedBuffer();
-		//status = TestLibrary.INSTANCE.DecoderReadSpeed(ptr, sb.getPointer(), PBytesRead);
-		//status = TestLibrary.INSTANCE.DecoderReadSpeed(ptr, sb.getPointer(), PBytesRead);
 		ByteBuffer byteBuffer = ByteBuffer.allocate(16);
 		IntBuffer intBuffer = IntBuffer.allocate(16);
 		while(true)
